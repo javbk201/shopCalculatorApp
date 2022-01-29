@@ -45,7 +45,7 @@ export default NewItem;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        //flex: 1,
     },
     input: {
       paddingTop: 5,
