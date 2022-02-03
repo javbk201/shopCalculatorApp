@@ -6,23 +6,25 @@ import NewItem from './src/component/newItem/newItem'
 
 
 const App = () => {
-  const [list, setList] = useState([
-    {
-      name: 'Product 1',
-      price: '$18272',
-    },
-    {
-      name: 'Product 2',
-      price: '$77133'
-    }
-
-  ]);
+  const [state, setState] = useState({
+    id: '',
+    name: '',
+    price: '',
+    list: [
+      {
+        id: 'kjahcsc78',
+        name: 'Product 1',
+        price: '$78665'
+      }
+    ],
+    total: ''
+  });
 
   return (
     <ThemeProvider>
       <Header />
-      <NewItem />
-      <Items productList={list} />
+      <NewItem setState={setState} state={state} />
+      <Items productList={state.list} setState={setState} state={state}  />
     </ThemeProvider>
   );
 };
