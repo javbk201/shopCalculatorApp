@@ -2,14 +2,25 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-nativ
 import React, { useState } from 'react';
 import { Icon } from 'react-native-elements';
 
-const NewItem = () => {
-  const [element, setElement] = useState({
-    name: '',
-    price: '',
-  });
+const NewItem = ({ setState, state }) => {
+  
 
-  const onChangePrice = (value) => {
-    setElement({ ...element, price: value})
+  const onChange = (key, value) => {
+    setState({ ...state, [key]: value})
+  }
+
+  const addItem = () => {
+    const newItem = { 
+      name: state.name,
+      price: state.price,
+      id: new Date().valueOf()
+    };
+    setState({
+       ...state, 
+       list: [ ...state.list, newItem],
+       name: '',
+       price: ''
+      })
   }
 
   return (
@@ -20,6 +31,8 @@ const NewItem = () => {
           <TextInput
           style={styles.input}
           placeholder='Add a product'
+          onChangeText={(value) => { onChange('name', value) }}
+          value={state.name}
           />
         </View>
         <View style={{ flexDirection: 'row' }}>
@@ -28,10 +41,13 @@ const NewItem = () => {
             style={[styles.input, {marginLeft: 0} ]}
             placeholder='Add a Price' 
             keyboardType='number-pad'
-            value={element.price}
-            onChangeText={(value) => { onChangePrice(value) }}/>
+            value={state.price}
+            onChangeText={(value) => { onChange('price', value) }}/>
         </View>
-        <TouchableOpacity style={{ paddingLeft: 5, paddingTop: 10 }} >
+        <TouchableOpacity 
+          style={{ paddingLeft: 5, paddingTop: 10 }} 
+          onPress={addItem}
+        >
           <Icon 
             name='plus-circle'
             type='feather' /> 
