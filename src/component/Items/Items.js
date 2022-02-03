@@ -1,19 +1,26 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React, { useEffect } from 'react';
 
-const Items = (props) => {
+const Items = ({ productList, state, setState }) => {
 
-  useEffect(() => {
-    //console.log(props.productList)
-  }, []);
+  const onRemoveItem = (id) => {
+    const item = productList.filter(i => id !== i.id)
+    console.log(item);
+    setState({ 
+      ...state, 
+      list: item,
+     });
+    
+  }
     
   return (
     <View style={styles.listContainer}>
       {
-          props.productList?.map((i, index) => (
+          productList?.map((i, index) => (
               <View key={index} style={styles.itemContainer}>
                 <Text style={styles.Text}>{i.name}</Text>
                 <Text style={styles.Text}>{i.price}</Text>
+              <Text onPress={() => onRemoveItem(i.id)}> - </Text>
               </View>
           ))
       }
