@@ -5,6 +5,9 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "pod": "npx pod-install ios",
+    "release:android": "cd android && ./gradlew app:assembleRelease",
+    "reset": "sudo rm -fr node_modules/ && yarn cache clean && yarn install",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."

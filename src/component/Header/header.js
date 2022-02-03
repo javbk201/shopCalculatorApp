@@ -4,7 +4,7 @@ import React from 'react';
 const Header = () => {
   return (
     <View style={styles.headerContainer}>
-        <Text style={styles.heading}>Header</Text>
+        <Text style={styles.heading}>ShopApp</Text>
     </View>
   );
 };
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     headerContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#397af8',
+        backgroundColor: '#3730a3',
         marginBottom: 20,
         width: '100%',
         paddingVertical: 15,
