@@ -3,6 +3,7 @@ import { ThemeProvider } from 'react-native-elements';
 import Header from './src/component/Header/header';
 import Items from './src/component/Items/Items';
 import NewItem from './src/component/newItem/newItem'
+import TotalComponent from './src/component/Total/TotalComponent';
 
 
 const App = () => {
@@ -14,7 +15,7 @@ const App = () => {
       {
         id: 'kjahcsc78',
         name: 'Product 1',
-        price: '$78665'
+        price: '78665'
       }
     ],
     total: ''
@@ -25,6 +26,7 @@ const App = () => {
       <Header />
       <NewItem setState={setState} state={state} />
       <Items productList={state.list} setState={setState} state={state}  />
+      <TotalComponent productList={state.list} />
     </ThemeProvider>
   );
 };
