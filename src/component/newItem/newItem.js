@@ -85,6 +85,8 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 20,
     marginLeft: 6,
+    color: 'black',
+    fontWeight: 'bold'
   },
   addElementStyle: {
     flexDirection: 'row',
