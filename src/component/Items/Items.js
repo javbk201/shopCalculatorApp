@@ -141,6 +141,9 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     width: windowWidth * 0.8,
+    marginBottom: 10, 
+    justifyContent: "center",
+    alignItems: "center"
   },
   Text: {
     fontSize: 20,

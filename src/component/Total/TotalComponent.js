@@ -15,8 +15,8 @@ const TotalComponent = ({ productList }) => {
   }, [productList]);
   
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text style={{ fontSize: 20, fontWeight: 'bold' }} >$ {total}</Text>
+    <View style={{ flex: 0.2, justifyContent: 'center', alignItems: 'center', }}>
+      <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'black' }} >$ {total}</Text>
     </View>
   );
 };
