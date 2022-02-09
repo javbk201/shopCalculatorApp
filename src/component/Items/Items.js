@@ -19,12 +19,21 @@ const Items = ({ productList, state, setState }) => {
     name: '',
     price: ''
   });
-
+  
+  /**
+   * @description esta funcion se encarga de camabiar el estado de Items para cambiar el valor de los inputs
+   * @param {String} key 
+   * @param {Sring} value 
+   */
   const onChange = (key, value) => {
     setItems({ ...items, [key]: value })
    
   }
-
+  /**
+   * @description Filtra la lista de productos y setea el valor del estado con el arreglo sin el elemento
+   * que es igual al id que recibe
+   * @param {Number} id 
+   */
   const onRemoveItem = (id) => {
     const item = productList.filter(i => id !== i.id)
     //console.log(item);
@@ -33,7 +42,13 @@ const Items = ({ productList, state, setState }) => {
       list: item,
     });
   }
-
+  
+  /**
+   * @description Cuando le da editar se setea el valor del id en el estado de isEditing. Cuando termina
+   * de deditar y va a guardar, la funcion devuelve el valor del estado a null y guarda los valores que 
+   * se editaron en el arreglo que viene por las props
+   * @param {Number} item 
+   */
   const onEditing = (item) => {
     const { name, price, id } = item;
     setItems({
