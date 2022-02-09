@@ -11,13 +11,7 @@ const App = () => {
     id: '',
     name: '',
     price: '',
-    list: [
-      {
-        id: 'kjahcsc78',
-        name: 'Product 1',
-        price: '78665'
-      }
-    ],
+    list: [],
     total: ''
   });
 
