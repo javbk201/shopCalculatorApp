@@ -146,6 +146,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginRight: 20,
-    //paddingHorizontal: 10,
+    color: 'black',
   }
 });
