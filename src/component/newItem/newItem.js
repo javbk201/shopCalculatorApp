@@ -44,8 +44,8 @@ const NewItem = ({ setState, state }) => {
             value={state.name}
           />
         </View>
-        <View style={{ flexDirection: 'row' }}>
-          <Text style={{ paddingTop: 7, fontSize: 16, fontWeight: 'bold' }}>$</Text>
+        <View style={{ flexDirection: 'row' }} >
+          <Text style={{ paddingTop: 7, fontSize: 16, fontWeight: 'bold' }}>$ </Text>
           <TextInput
             style={[styles.input, { marginLeft: 0 }]}
             placeholder='Add a Price'
@@ -54,17 +54,18 @@ const NewItem = ({ setState, state }) => {
             onChangeText={(value) => { onChange('price', value) }}
             onEndEditing={() => onEndEditingPrice()}
           />
-
         </View>
-        <TouchableOpacity
-          style={{ paddingLeft: 5, paddingTop: 10 }}
-          onPress={addItem}
-        >
-          <Icon
-            name='plus'
-            type='feather'
-            color='gray' />
-        </TouchableOpacity>
+        <View>
+          <TouchableOpacity
+            style={{ paddingLeft: 5, paddingTop: 3 }}
+            onPress={addItem}
+          >
+            <Icon
+              name='plus'
+              type='feather'
+              color='gray' />
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
